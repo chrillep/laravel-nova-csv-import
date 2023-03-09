@@ -19,7 +19,7 @@ jobs:
       - name: Validate composer.json and composer.lock
         run: composer validate --strict
       - name: Authenticate Nova In CI Environment
-        run: composer config http-basic.nova.laravel.com ${NOVA_USERNAME} ${NOVA_LICENSE_KEY}
+        run: composer config http-basic.nova.laravel.com ${secrets.NOVA_USERNAME} ${secrets.NOVA_LICENSE_KEY}
       - name: Cache Composer packages
         id: composer-cache
         uses: actions/cache@v3
